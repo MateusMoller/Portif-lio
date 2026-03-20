@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050A14" />
+  <circle cx="180" cy="80" r="250" fill="#1D4ED8" fill-opacity="0.25" />
+  <circle cx="1060" cy="120" r="220" fill="#06B6D4" fill-opacity="0.22" />
+  <circle cx="540" cy="700" r="300" fill="#10B981" fill-opacity="0.16" />
+  <rect x="80" y="70" width="1040" height="490" rx="28" fill="url(#panel)" stroke="#E6EEFF" stroke-opacity="0.2" />
+  <text x="140" y="220" fill="#E6EEFF" font-size="74" font-family="Sora, sans-serif" font-weight="700">
+    Mateus Moller
+  </text>
+  <text x="140" y="292" fill="#A8B8D8" font-size="36" font-family="Plus Jakarta Sans, sans-serif" font-weight="500">
+    Tecnologia Aplicada a Industria
+  </text>
+  <text x="140" y="356" fill="#8EA2C7" font-size="30" font-family="Plus Jakarta Sans, sans-serif">
+    Automacao, Processos e Solucoes Reais
+  </text>
+  <rect x="140" y="420" width="332" height="54" rx="14" fill="#1D4ED8" />
+  <text x="170" y="456" fill="#FFFFFF" font-size="26" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+    Portfolio Profissional
+  </text>
+  <defs>
+    <linearGradient id="panel" x1="80" y1="70" x2="1030" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121D35" stop-opacity="0.92" />
+      <stop offset="1" stop-color="#0A1325" stop-opacity="0.88" />
+    </linearGradient>
+  </defs>
+</svg>

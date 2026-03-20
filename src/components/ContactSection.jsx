@@ -6,17 +6,18 @@ import TiltCard from './TiltCard'
 
 function ContactSection({ personal, links, contact }) {
   const hasEmail = Boolean(personal.email)
+  const hasPhone = Boolean(personal.phone)
 
   return (
     <section id="contato" className="section-anchor">
       <Reveal>
         <SectionHeader eyebrow="Contato" title={contact.title} description={contact.description} />
-        <p className="mt-3 text-sm text-brand-muted">{contact.callToAction}</p>
+        <p className="mt-3 max-w-2xl text-sm text-brand-muted">{contact.callToAction}</p>
       </Reveal>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid items-stretch gap-4 lg:grid-cols-3">
         <Reveal delay={80}>
-          <TiltCard className="glass-panel fx-card rounded-3xl border border-white/10 p-5">
+          <TiltCard className="glass-panel fx-card flex h-full flex-col rounded-3xl border border-white/10 p-5">
             <p className="mb-3 inline-flex rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-brand-muted">
               GitHub
             </p>
@@ -27,7 +28,7 @@ function ContactSection({ personal, links, contact }) {
               href={links.github}
               target="_blank"
               rel="noreferrer"
-              className="fx-btn mt-5 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
+              className="fx-btn mt-auto inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -39,7 +40,7 @@ function ContactSection({ personal, links, contact }) {
         </Reveal>
 
         <Reveal delay={130}>
-          <TiltCard className="fx-card rounded-3xl border border-white/10 bg-white/[0.03] p-5">
+          <TiltCard className="fx-card flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-5">
             <p className="mb-3 inline-flex rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-brand-muted">
               LinkedIn
             </p>
@@ -52,7 +53,7 @@ function ContactSection({ personal, links, contact }) {
               href={links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="fx-btn mt-5 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
+              className="fx-btn mt-auto inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -64,7 +65,7 @@ function ContactSection({ personal, links, contact }) {
         </Reveal>
 
         <Reveal delay={180}>
-          <TiltCard className="fx-card rounded-3xl border border-dashed border-brand-emerald/35 bg-brand-emerald/10 p-5">
+          <TiltCard className="fx-card flex h-full flex-col rounded-3xl border border-dashed border-brand-emerald/35 bg-brand-emerald/10 p-5">
             <p className="mb-3 inline-flex rounded-full border border-brand-emerald/30 bg-brand-emerald/15 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-brand-muted">
               E-mail
             </p>
@@ -75,9 +76,14 @@ function ContactSection({ personal, links, contact }) {
                 <p className="mt-2 text-sm text-brand-muted">
                   Preferencia para propostas, projetos e contato profissional.
                 </p>
+                {hasPhone ? (
+                  <p className="mt-2 text-xs uppercase tracking-[0.12em] text-brand-cyan/90">
+                    Telefone: {personal.phone}
+                  </p>
+                ) : null}
                 <Motion.a
                   href={`mailto:${personal.email}`}
-                  className="fx-btn mt-5 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
+                  className="fx-btn mt-auto inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
                   whileHover={{ y: -2, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -91,7 +97,7 @@ function ContactSection({ personal, links, contact }) {
                   Campo reservado para e-mail profissional. Edite em{' '}
                   <code className="text-slate-100">src/data/portfolioData.js</code>.
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-muted">
+                <span className="mt-auto inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-muted">
                   <Wrench size={15} />
                   Adicionar e-mail depois
                 </span>

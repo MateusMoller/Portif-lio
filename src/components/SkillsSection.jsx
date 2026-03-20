@@ -23,7 +23,7 @@ function SkillsSection({ skills }) {
         />
       </Reveal>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {skills.map((skill, index) => {
           const Icon = getSkillIcon(skill.icon)
           const isExpanded = expandedSkill === skill.name
@@ -32,7 +32,7 @@ function SkillsSection({ skills }) {
           return (
             <Reveal key={skill.name} delay={index * 40}>
               <TiltCard
-                className={`fx-card rounded-2xl border bg-white/[0.03] p-5 transition duration-300 hover:bg-white/[0.06] ${
+                className={`fx-card h-full rounded-2xl border bg-white/[0.03] p-5 transition duration-300 hover:bg-white/[0.06] ${
                   isExpanded ? 'border-brand-cyan/45' : 'border-white/10 hover:border-brand-cyan/45'
                 }`}
               >

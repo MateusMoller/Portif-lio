@@ -1,15 +1,16 @@
-export const portfolioData = {
+﻿export const portfolioData = {
   personal: {
     name: 'Mateus Moller',
-    role: 'Estudante de Programacao e Tecnologia da Informacao',
+    role: 'Analista de Processos | Estudante de Engenharia de Producao',
     headline: 'Tecnologia aplicada ao ambiente industrial com foco em eficiencia real.',
     subtitle:
       'Desenvolvo solucoes que conectam TI, processos e engenharia para transformar rotinas operacionais em fluxos mais rapidos, padronizados e confiaveis.',
-    location: 'Brasil',
-    availability: 'Disponivel para networking, colaboracoes e novas oportunidades.',
+    location: 'Taquara, RS - Brasil',
+    availability: 'Disponivel para networking, colaboracoes e oportunidades em processos, automacao e tecnologia aplicada.',
     avatarUrl: 'https://avatars.githubusercontent.com/u/173965532?v=4',
-    resumeUrl: '',
+    resumeUrl: '/curriculo-mateus.pdf',
     email: 'mateushmoller@gmail.com',
+    phone: '+55 51 99861-2360',
     githubLastUpdate: '26/02/2026',
   },
   links: {
@@ -32,26 +33,26 @@ export const portfolioData = {
   ],
   highlights: [
     { value: '3', label: 'Repositorios publicos no GitHub' },
-    { value: '2', label: 'Projetos com foco direto em aplicacao industrial' },
-    { value: '2026', label: 'Perfil tecnico atualizado em fev/2026' },
-    { value: 'TI + Engenharia', label: 'Direcao de carreira em tecnologia aplicada' },
+    { value: '2025-2026', label: 'Experiencia recente em processos industriais e administrativos' },
+    { value: 'FURG', label: 'Graduacao em Engenharia de Producao (em andamento)' },
+    { value: 'Tecnico em Mecanica', label: 'Base tecnica para atuar entre operacao e engenharia' },
   ],
   about: {
     title: 'Sobre Mim',
     intro:
-      'Sou estudante de programacao e TI com atuacao pratica no setor industrial. Meu trabalho se concentra em entender problemas reais da operacao e desenvolver solucoes tecnicas objetivas.',
+      'Sou analista de processos com atuacao em industria e servicos, e estudante de Engenharia de Producao. Meu foco esta em transformar rotina operacional em fluxo organizado, mensuravel e eficiente.',
     paragraphs: [
-      'Atuo em projetos que unem automacao, desenvolvimento de sistemas internos e melhoria de processos. Meu foco e criar ferramentas funcionais, com impacto no dia a dia da producao.',
-      'Tenho interesse em Python, React e interfaces que facilitem decisao operacional. Gosto de transformar demandas do chao de fabrica em recursos digitais claros, escalaveis e uteis para a equipe.',
-      'Meu objetivo profissional e consolidar uma carreira em tecnologia industrial, conectando software, processo e engenharia para gerar ganho de produtividade com qualidade tecnica.',
+      'Tenho experiencia pratica no mapeamento, organizacao e padronizacao de processos produtivos e administrativos, incluindo rotinas trabalhistas e fluxos internos.',
+      'Atuo conectando operacao, engenharia e tecnologia com ferramentas como ERP, Excel e Power BI para melhorar visibilidade, controle e tomada de decisao.',
+      'Busco evoluir como lider tecnico de melhoria e automacao de processos, mantendo foco em qualidade, seguranca, produtividade e resultado real.',
     ],
     focusTags: [
       'Tecnologia aplicada a industria',
       'Automacao de processos',
       'Desenvolvimento de sistemas internos',
       'Integracao entre operacao e TI',
-      'Prototipos e interfaces',
-      'Resolucao de problemas reais',
+      'ERP, Excel e Power BI',
+      'Padronizacao e melhoria continua',
     ],
   },
   skills: [
@@ -187,6 +188,28 @@ export const portfolioData = {
       ],
     },
     {
+      name: 'Analise com ERP, Excel e Power BI',
+      icon: 'analysis',
+      category: 'Gestao',
+      summary: 'Uso de dados operacionais para controle de estoque, acompanhamento de producao e suporte a decisao.',
+      details: [
+        'Atuacao com ERP SIGER em rotina de PCP.',
+        'Planilhas dinamicas e controles em Excel para operacao.',
+        'Analise visual em Power BI para acompanhamento de desempenho.',
+      ],
+    },
+    {
+      name: 'Base Tecnica em Mecanica Industrial',
+      icon: 'industrial',
+      category: 'Formacao Tecnica',
+      summary: 'Visao de processo apoiada por formacao tecnica em mecanica e entendimento de manutencao de maquinas.',
+      details: [
+        'Curso tecnico integrado em Mecanica (CIMOL).',
+        'Conhecimento de manutencao e rotina industrial.',
+        'Contato com software de desenho mecanico (Autodesk Inventor).',
+      ],
+    },
+    {
       name: 'Contexto Industrial',
       icon: 'industrial',
       category: 'Dominio',
@@ -233,7 +256,7 @@ export const portfolioData = {
         'Base pronta para crescimento incremental conforme requisitos de fabrica.',
       ],
       sourceNote:
-        'Descricao oficial extraida do repositório GitHub. Estrutura atual ainda sem arquivos de implementacao.',
+        'Descricao oficial extraida do repositorio GitHub. Estrutura atual ainda sem arquivos de implementacao.',
       featured: true,
       dataLimited: true,
     },
@@ -255,14 +278,61 @@ export const portfolioData = {
     },
   ],
   professionalProfile: {
-    title: 'Perfil Profissional',
+    title: 'Perfil Profissional e Trajetoria',
     overview:
-      'Minha atuacao combina visao operacional e desenvolvimento tecnico para construir solucoes praticas em contexto industrial.',
+      'Atuacao orientada a melhoria de processos, padronizacao e integracao entre operacao, engenharia e tecnologia.',
     pillars: [
-      'Mapeamento de gargalos e traducao para requisitos de software.',
-      'Criacao de ferramentas internas orientadas a eficiencia e repetibilidade.',
-      'Integracao entre equipe operacional, processos e tecnologia.',
-      'Evolucao continua com prototipos e validacao rapida em campo.',
+      'Crescimento pessoal e da equipe com foco em melhoria continua.',
+      'Aprimoramento constante de metodos, processos e padroes operacionais.',
+      'Atuacao em melhoria e automacao de processos com foco pratico.',
+      'Desenvolvimento para lideranca tecnica eficiente e colaborativa.',
+    ],
+    experiences: [
+      {
+        role: 'Analista de Processos',
+        company: 'Grow Contabilidade',
+        location: 'Taquara, RS',
+        period: 'Desde fevereiro de 2026',
+        description:
+          'Responsavel por criacao, organizacao e padronizacao de processos internos, com mapeamento de rotinas trabalhistas e documentacao de procedimentos para elevar eficiencia e qualidade.',
+      },
+      {
+        role: 'Lider / Analista de Processos',
+        company: 'Reginato Metais',
+        location: 'Campo Bom, RS',
+        period: 'Setembro de 2025 a fevereiro de 2026',
+        description:
+          'Atuacao em analise, desenvolvimento e otimizacao de processos produtivos, com foco em eficiencia, qualidade, seguranca, indicadores e integracao entre engenharia, qualidade e operacao.',
+      },
+      {
+        role: 'Analista e Programador de PCP',
+        company: 'Reginato Metais',
+        location: 'Campo Bom, RS',
+        period: 'Marco de 2025 a setembro de 2025',
+        description:
+          'Atuacao em PCP com ERP SIGER, controle de estoque com Excel e analise de dados de producao utilizando Power BI e planilhas dinamicas.',
+      },
+    ],
+    education: [
+      {
+        course: 'Engenharia de Producao',
+        institution: 'FURG - Universidade Federal do Rio Grande',
+        status: 'Cursando (inicio em 2026)',
+      },
+      {
+        course: 'Tecnico Integrado em Mecanica',
+        institution: 'Escola Tecnica Estadual Monteiro Lobato (CIMOL)',
+        status: 'Concluido (2020-2023)',
+      },
+    ],
+    languages: [
+      'Portugues - Nativo',
+      'Ingles - Basico',
+    ],
+    profileTraits: [
+      'Proativo e dinamico',
+      'Boa comunicacao e relacionamento interpessoal',
+      'Facil aprendizagem e adaptacao',
     ],
     trajectory: [
       {
@@ -294,3 +364,4 @@ export const portfolioData = {
     callToAction: 'Vamos construir solucoes tecnicas com impacto real na operacao.',
   },
 }
+

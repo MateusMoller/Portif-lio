@@ -10,9 +10,9 @@ function AboutSection({ about }) {
         <SectionHeader eyebrow="Sobre" title={about.title} description={about.intro} />
       </Reveal>
 
-      <div className="grid gap-5 lg:grid-cols-[1.6fr_1fr]">
+      <div className="grid items-stretch gap-5 lg:grid-cols-[1.55fr_1fr]">
         <Reveal delay={80}>
-          <TiltCard className="glass-panel fx-card rounded-3xl border border-white/10 p-6 sm:p-7">
+          <TiltCard className="glass-panel fx-card h-full rounded-3xl border border-white/10 p-6 sm:p-7">
             <div className="space-y-4 text-base leading-relaxed text-brand-muted">
               {about.paragraphs.map((paragraph, index) => (
                 <Motion.p
@@ -30,9 +30,9 @@ function AboutSection({ about }) {
         </Reveal>
 
         <Reveal delay={150}>
-          <TiltCard className="fx-card rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+          <TiltCard className="fx-card h-full rounded-3xl border border-white/10 bg-white/[0.03] p-6">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-brand-cyan">Foco Tecnico</p>
-            <ul className="space-y-3">
+            <ul className="grid gap-2.5">
               {about.focusTags.map((tag, index) => (
                 <Motion.li
                   key={tag}

@@ -15,11 +15,11 @@ function ProjectsSection({ projects }) {
         />
       </Reveal>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid items-stretch gap-6 xl:grid-cols-2">
         {projects.map((project, index) => (
           <Reveal key={project.name} delay={index * 70}>
             <TiltCard
-              className={`fx-card rounded-3xl border p-6 transition duration-300 hover:bg-white/[0.06] ${
+              className={`fx-card flex h-full flex-col rounded-3xl border p-6 transition duration-300 hover:bg-white/[0.06] ${
                 project.featured
                   ? 'border-brand-cyan/35 bg-gradient-to-br from-brand-cyan/10 via-brand-accent/5 to-transparent'
                   : 'border-white/10 bg-white/[0.03]'
@@ -66,7 +66,7 @@ function ProjectsSection({ projects }) {
                 </p>
               ) : null}
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-auto flex flex-wrap gap-3 pt-6">
                 <Motion.a
                   href={project.repositoryUrl}
                   target="_blank"

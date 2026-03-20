@@ -1,4 +1,4 @@
-﻿import { AnimatePresence, motion as Motion } from 'framer-motion'
+import { AnimatePresence, motion as Motion } from 'framer-motion'
 import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Reveal from './Reveal'
@@ -17,78 +17,38 @@ function HeroSection({ personal, links, highlights }) {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveInsight((previous) => (previous + 1) % rotatingInsights.length)
-    }, 2800)
+    }, 3000)
 
     return () => window.clearInterval(intervalId)
   }, [])
 
   return (
-    <section id="inicio" className="section-anchor pt-8">
+    <section id="inicio" className="section-anchor">
       <Reveal className="glass-panel relative overflow-hidden rounded-4xl border border-white/10 p-6 shadow-soft sm:p-8 lg:p-10">
-        <Motion.div
-          className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-brand-cyan/15 blur-3xl"
-          animate={{
-            x: [0, 20, -18, 0],
-            y: [0, -12, 16, 0],
-            scale: [1, 1.1, 0.94, 1],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <Motion.div
-          className="pointer-events-none absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-brand-emerald/15 blur-3xl"
-          animate={{
-            x: [0, -22, 20, 0],
-            y: [0, 14, -10, 0],
-            scale: [1, 0.9, 1.08, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        />
+        <div className="pointer-events-none absolute -right-14 -top-14 h-56 w-56 rounded-full bg-brand-cyan/15 blur-3xl" />
+        <div className="pointer-events-none absolute -left-12 bottom-0 h-44 w-44 rounded-full bg-brand-emerald/15 blur-3xl" />
 
-        <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <div>
-            <Motion.p
-              className="mb-4 inline-flex rounded-full border border-brand-cyan/30 bg-brand-cyan/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-cyan"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.1 }}
-            >
+        <div className="relative grid items-start gap-8 xl:grid-cols-[minmax(0,1.25fr)_minmax(0,0.95fr)]">
+          <div className="flex flex-col gap-5">
+            <p className="inline-flex w-fit rounded-full border border-brand-cyan/30 bg-brand-cyan/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-cyan">
               Portfolio Profissional
-            </Motion.p>
+            </p>
 
-            <Motion.h1
-              className="text-shimmer font-display text-4xl font-semibold tracking-tight text-brand-text sm:text-5xl lg:text-6xl"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.18 }}
-            >
+            <h1 className="text-shimmer font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               {personal.name}
-            </Motion.h1>
+            </h1>
 
-            <Motion.p
-              className="mt-4 text-lg font-medium leading-relaxed text-slate-200"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.24 }}
-            >
-              {personal.headline}
-            </Motion.p>
-            <Motion.p
-              className="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.3 }}
-            >
-              {personal.subtitle}
-            </Motion.p>
+            <p className="max-w-2xl text-lg font-medium leading-relaxed text-slate-200">{personal.headline}</p>
+            <p className="max-w-2xl text-base leading-relaxed text-brand-muted">{personal.subtitle}</p>
 
-            <div className="mt-4 h-8 overflow-hidden">
+            <div className="h-8 overflow-hidden">
               <AnimatePresence mode="wait">
                 <Motion.p
                   key={rotatingInsights[activeInsight]}
-                  initial={{ opacity: 0, y: 16, filter: 'blur(8px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, y: -16, filter: 'blur(6px)' }}
-                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -14 }}
+                  transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex items-center gap-2 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 px-3 py-1 text-xs font-medium text-brand-cyan"
                 >
                   <Sparkles size={13} />
@@ -97,12 +57,12 @@ function HeroSection({ personal, links, highlights }) {
               </AnimatePresence>
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <Motion.a
                 href="#projetos"
                 className="fx-btn inline-flex items-center gap-2 rounded-xl bg-brand-accent px-5 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-500"
-                whileHover={{ y: -3, scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ y: -2, scale: 1.015 }}
+                whileTap={{ scale: 0.985 }}
               >
                 Ver Projetos
                 <ArrowRight size={15} />
@@ -113,8 +73,8 @@ function HeroSection({ personal, links, highlights }) {
                 target="_blank"
                 rel="noreferrer"
                 className="fx-btn inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
-                whileHover={{ y: -3, scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ y: -2, scale: 1.015 }}
+                whileTap={{ scale: 0.985 }}
               >
                 <Github size={15} />
                 GitHub
@@ -125,8 +85,8 @@ function HeroSection({ personal, links, highlights }) {
                 target="_blank"
                 rel="noreferrer"
                 className="fx-btn inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
-                whileHover={{ y: -3, scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ y: -2, scale: 1.015 }}
+                whileTap={{ scale: 0.985 }}
               >
                 <Linkedin size={15} />
                 LinkedIn
@@ -135,8 +95,8 @@ function HeroSection({ personal, links, highlights }) {
               <Motion.a
                 href="#contato"
                 className="fx-btn inline-flex items-center gap-2 rounded-xl border border-brand-emerald/35 bg-brand-emerald/10 px-4 py-3 text-sm font-semibold text-brand-text transition hover:border-brand-emerald/55 hover:bg-brand-emerald/15"
-                whileHover={{ y: -3, scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ y: -2, scale: 1.015 }}
+                whileTap={{ scale: 0.985 }}
               >
                 <Mail size={15} />
                 Entrar em Contato
@@ -148,8 +108,8 @@ function HeroSection({ personal, links, highlights }) {
                   target="_blank"
                   rel="noreferrer"
                   className="fx-btn inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
-                  whileHover={{ y: -3, scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
+                  whileHover={{ y: -2, scale: 1.015 }}
+                  whileTap={{ scale: 0.985 }}
                 >
                   <Download size={15} />
                   Baixar Curriculo
@@ -163,8 +123,8 @@ function HeroSection({ personal, links, highlights }) {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <TiltCard className="fx-card rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div className="flex flex-col gap-4">
+            <TiltCard className="fx-card h-full rounded-2xl border border-white/10 bg-white/[0.03] p-5">
               <div className="flex items-center gap-3">
                 <img
                   src={personal.avatarUrl}
@@ -173,7 +133,7 @@ function HeroSection({ personal, links, highlights }) {
                   loading="lazy"
                 />
 
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-brand-text">{personal.role}</p>
                   <p className="mt-1 flex items-center gap-1 text-xs text-brand-muted">
                     <MapPin size={12} />
@@ -185,19 +145,15 @@ function HeroSection({ personal, links, highlights }) {
               <p className="mt-4 text-sm leading-relaxed text-brand-muted">{personal.availability}</p>
             </TiltCard>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
-              {highlights.map((highlight, index) => (
-                <Motion.article
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {highlights.map((highlight) => (
+                <TiltCard
                   key={highlight.label}
-                  className="fx-card rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-brand-cyan/35 hover:bg-white/[0.05]"
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.25 + index * 0.08 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="fx-card h-full rounded-2xl border border-white/10 bg-white/[0.03] p-4"
                 >
                   <p className="font-display text-xl font-semibold text-brand-text">{highlight.value}</p>
                   <p className="mt-1 text-xs leading-relaxed text-brand-muted">{highlight.label}</p>
-                </Motion.article>
+                </TiltCard>
               ))}
             </div>
           </div>
@@ -208,4 +164,3 @@ function HeroSection({ personal, links, highlights }) {
 }
 
 export default HeroSection
-

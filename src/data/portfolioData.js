@@ -11,7 +11,7 @@
     resumeUrl: '/curriculo-mateus.pdf',
     email: 'mateushmoller@gmail.com',
     phone: '+55 51 99861-2360',
-    githubLastUpdate: '26/02/2026',
+    githubLastUpdate: '20/03/2026',
   },
   links: {
     github: 'https://github.com/MateusMoller',
@@ -32,7 +32,7 @@
     { label: 'Contato', href: '#contato' },
   ],
   highlights: [
-    { value: '3', label: 'Repositorios publicos no GitHub' },
+    { value: '5', label: 'Repositorios publicos no GitHub' },
     { value: '2025-2026', label: 'Experiencia recente em processos industriais e administrativos' },
     { value: 'FURG', label: 'Graduacao em Engenharia de Producao (em andamento)' },
     { value: 'Tecnico em Mecanica', label: 'Base tecnica para atuar entre operacao e engenharia' },
@@ -224,6 +224,24 @@
   ],
   projects: [
     {
+      name: 'processos-contabeis',
+      description:
+        'Central de processos internos para armazenar e organizar fluxos, procedimentos e documentos operacionais, com foco em padronizacao e melhoria continua.',
+      repositoryUrl: 'https://github.com/MateusMoller/processos-contabeis',
+      status: 'Ativo',
+      context:
+        'Repositorio orientado a governanca operacional no escritorio, facilitando consulta rapida e consistencia na execucao das rotinas.',
+      stack: ['Documentacao Tecnica', 'Padronizacao de Processos', 'Fluxos Operacionais', 'Melhoria Continua'],
+      highlightPoints: [
+        'Centraliza processos e procedimentos em um unico ponto de referencia.',
+        'Apoia treinamento interno com instrucoes organizadas e reutilizaveis.',
+        'Reduz variacao de execucao por meio de padroes claros de rotina.',
+      ],
+      sourceNote:
+        'Descricao baseada no repositorio publico e no README da central de processos.',
+      featured: true,
+    },
+    {
       name: 'Consulta-Imagens-Rech',
       description:
         'Ferramenta em Python para localizar e abrir imagens por texto selecionado, via atalho global, reduzindo tempo em consultas internas com alto volume de arquivos.',
@@ -274,6 +292,24 @@
         'Funciona como base de identidade tecnica publica.',
       ],
       sourceNote: 'Conteudo consultado diretamente no README publico do perfil GitHub.',
+      featured: false,
+    },
+    {
+      name: 'Portif-lio',
+      description:
+        'Portifolio profissional em React com foco em identidade tecnica, apresentacao de projetos e posicionamento para oportunidades em tecnologia aplicada.',
+      repositoryUrl: 'https://github.com/MateusMoller/Portif-lio',
+      status: 'Ativo',
+      context:
+        'Projeto autoral publicado com deploy automatizado no GitHub Pages e estrutura pronta para manutencao continua.',
+      stack: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions', 'GitHub Pages'],
+      highlightPoints: [
+        'Arquitetura componentizada para editar secoes e dados com rapidez.',
+        'Visual responsivo com foco em UX para desktop e mobile.',
+        'Pipeline de build e deploy automatizada para publicacao continua.',
+      ],
+      sourceNote:
+        'Dados extraidos do repositorio publico Portif-lio e da configuracao de deploy ativa.',
       featured: false,
     },
   ],

@@ -105,6 +105,19 @@
       ],
     },
     {
+      name: 'Integracao de IA com Processos e Automacao',
+      icon: 'integration',
+      category: 'IA Aplicada',
+      summary:
+        'Aplicacao de IA como camada de apoio operacional para acelerar analise, padronizar respostas e reduzir tempo de execucao em rotinas repetitivas.',
+      details: [
+        'Case de referencia: uso de IA para transformar solicitacoes operacionais em passos padronizados de execucao.',
+        'Combinacao de IA com automacoes para triagem de demandas e priorizacao de tarefas.',
+        'Apoio a documentacao tecnica com sugestoes de fluxo, checklist e melhorias continuas.',
+        'Foco em IA como suporte de processo: com validacao humana e impacto real na rotina.',
+      ],
+    },
+    {
       name: 'Prototipacao Funcional',
       icon: 'prototyping',
       category: 'Validacao',

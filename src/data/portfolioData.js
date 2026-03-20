@@ -279,22 +279,6 @@
       dataLimited: true,
     },
     {
-      name: 'MateusMoller (README Tecnico)',
-      description:
-        'Repositorio de perfil com resumo tecnico, foco de carreira e tecnologia utilizada em projetos voltados a eficiencia operacional.',
-      repositoryUrl: 'https://github.com/MateusMoller/MateusMoller',
-      status: 'Ativo',
-      context: 'Documentacao de posicionamento profissional e stack principal.',
-      stack: ['Markdown', 'GitHub Profile', 'Documentacao'],
-      highlightPoints: [
-        'Comunica foco em TI aplicada ao ambiente industrial.',
-        'Apresenta stack principal e direcionamento de desenvolvimento.',
-        'Funciona como base de identidade tecnica publica.',
-      ],
-      sourceNote: 'Conteudo consultado diretamente no README publico do perfil GitHub.',
-      featured: false,
-    },
-    {
       name: 'Portif-lio',
       description:
         'Portifolio profissional em React com foco em identidade tecnica, apresentacao de projetos e posicionamento para oportunidades em tecnologia aplicada.',
@@ -310,7 +294,7 @@
       ],
       sourceNote:
         'Dados extraidos do repositorio publico Portif-lio e da configuracao de deploy ativa.',
-      featured: false,
+      featured: true,
     },
   ],
   professionalProfile: {

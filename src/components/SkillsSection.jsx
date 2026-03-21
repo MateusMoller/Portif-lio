@@ -1,99 +1,103 @@
-﻿import { AnimatePresence, motion as Motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
-import { useState } from 'react'
-import { getSkillIcon } from '../utils/skillIconMap'
+import { motion as Motion } from 'framer-motion'
+import { BarChart3, Cog, Factory, Wrench } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeader from './SectionHeader'
 import TiltCard from './TiltCard'
 
 function SkillsSection({ skills }) {
-  const [expandedSkill, setExpandedSkill] = useState(null)
+  const groupConfig = [
+    {
+      title: 'Dados',
+      icon: BarChart3,
+      description: 'Leitura de indicadores e apoio a decisao operacional.',
+      categories: ['Gestao', 'Eficiencia'],
+    },
+    {
+      title: 'Automacao',
+      icon: Cog,
+      description: 'Automacao, integracao e fluxo de execucao mais rapido.',
+      categories: ['Produtividade', 'Integracao', 'IA Aplicada', 'Validacao'],
+    },
+    {
+      title: 'Ferramentas',
+      icon: Wrench,
+      description: 'Base tecnica para construir, testar e evoluir solucoes.',
+      categories: ['Ferramentas'],
+    },
+    {
+      title: 'Processos / Industria',
+      icon: Factory,
+      description: 'Processo, governanca e contexto de operacao fabril.',
+      categories: [
+        'Processos',
+        'Operacao',
+        'Arquitetura',
+        'Governanca',
+        'Entrega',
+        'Colaboracao',
+        'Formacao Tecnica',
+        'Dominio',
+      ],
+    },
+  ]
 
-  const handleToggleSkill = (skillName) => {
-    setExpandedSkill((currentSkill) => (currentSkill === skillName ? null : skillName))
-  }
+  const groupedSkills = groupConfig
+    .map((group) => ({
+      ...group,
+      items: skills.filter((skill) => group.categories.includes(skill.category)),
+    }))
+    .filter((group) => group.items.length > 0)
 
   return (
     <section id="stack" className="section-anchor">
       <Reveal>
         <SectionHeader
           eyebrow="Competencias"
-          title="Competencias e Insights de Tecnologia"
-          description="Uma visao mais ampla da minha atuacao: pensamento de processo, integracao operacional e tecnologia como meio para resolver problemas reais."
+          title="Stack Tecnico em Blocos"
+          description="Visao rapida das competencias por frente de atuacao."
         />
       </Reveal>
 
       <div className="grid gap-4 md:grid-cols-2">
-        {skills.map((skill, index) => {
-          const Icon = getSkillIcon(skill.icon)
-          const isExpanded = expandedSkill === skill.name
-          const detailsId = `skill-details-${index + 1}`
+        {groupedSkills.map((group, index) => {
+          const Icon = group.icon
+          const visibleItems = group.items.slice(0, 6)
+          const extraCount = Math.max(group.items.length - visibleItems.length, 0)
 
           return (
-            <Reveal key={skill.name} delay={index * 40}>
-              <TiltCard
-                className={`fx-card h-full rounded-2xl border bg-white/[0.03] p-5 transition duration-300 hover:bg-white/[0.06] ${
-                  isExpanded ? 'border-brand-cyan/45' : 'border-white/10 hover:border-brand-cyan/45'
-                }`}
-              >
-                <button
-                  type="button"
-                  aria-expanded={isExpanded}
-                  aria-controls={detailsId}
-                  onClick={() => handleToggleSkill(skill.name)}
-                  className="w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="inline-flex rounded-xl border border-white/15 bg-brand-accent/12 p-2 text-brand-cyan">
-                      <Icon size={20} />
+            <Reveal key={group.title} delay={index * 70}>
+              <TiltCard className="fx-card h-full rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition duration-300 hover:border-brand-cyan/45 hover:bg-white/[0.06]">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="inline-flex rounded-xl border border-brand-cyan/30 bg-brand-cyan/10 p-2 text-brand-cyan">
+                      <Icon size={18} />
                     </span>
-
-                    <span className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-brand-muted">
-                      {skill.category}
-                    </span>
+                    <h3 className="mt-3 text-lg font-semibold text-brand-text">{group.title}</h3>
+                    <p className="mt-2 text-sm text-brand-muted">{group.description}</p>
                   </div>
 
-                  <div className="mt-4 flex items-center justify-between gap-4">
-                    <h3 className="text-lg font-semibold text-brand-text">{skill.name}</h3>
-                    <Motion.span animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.26 }}>
-                      <ChevronDown size={18} className={isExpanded ? 'text-brand-cyan' : 'text-brand-muted'} />
-                    </Motion.span>
-                  </div>
+                  <span className="rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-xs uppercase tracking-[0.12em] text-brand-muted">
+                    {group.items.length} skills
+                  </span>
+                </div>
 
-                  <p className="mt-2 text-sm leading-relaxed text-brand-muted">{skill.summary}</p>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isExpanded ? (
-                    <Motion.div
-                      id={detailsId}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {visibleItems.map((item) => (
+                    <Motion.span
+                      key={item.name}
+                      className="rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-xs text-slate-200"
+                      whileHover={{ y: -2, scale: 1.02 }}
                     >
-                      <div className="mt-4 rounded-xl border border-white/10 bg-black/20 p-3">
-                        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">
-                          Mais Informacoes
-                        </p>
-                        <ul className="space-y-2">
-                          {skill.details?.map((detail, detailIndex) => (
-                            <Motion.li
-                              key={detail}
-                              initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.28, delay: detailIndex * 0.05 }}
-                              className="text-sm leading-relaxed text-slate-200"
-                            >
-                              - {detail}
-                            </Motion.li>
-                          ))}
-                        </ul>
-                      </div>
-                    </Motion.div>
+                      {item.name}
+                    </Motion.span>
+                  ))}
+
+                  {extraCount ? (
+                    <span className="rounded-full border border-brand-cyan/25 bg-brand-cyan/10 px-3 py-1 text-xs text-brand-cyan">
+                      +{extraCount}
+                    </span>
                   ) : null}
-                </AnimatePresence>
+                </div>
               </TiltCard>
             </Reveal>
           )
@@ -104,4 +108,3 @@ function SkillsSection({ skills }) {
 }
 
 export default SkillsSection
-

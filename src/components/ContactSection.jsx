@@ -65,8 +65,8 @@ function ContactSection({ personal, links, contact }) {
         </Reveal>
 
         <Reveal delay={180}>
-          <TiltCard className="fx-card flex h-full flex-col rounded-3xl border border-dashed border-brand-emerald/35 bg-brand-emerald/10 p-5">
-            <p className="mb-3 inline-flex rounded-full border border-brand-emerald/30 bg-brand-emerald/15 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-brand-muted">
+          <TiltCard className="fx-card flex h-full flex-col rounded-3xl border border-dashed border-brand-cyan/35 bg-brand-cyan/10 p-5">
+            <p className="mb-3 inline-flex rounded-full border border-brand-cyan/30 bg-brand-cyan/15 px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-brand-muted">
               E-mail
             </p>
             <h3 className="text-base font-semibold text-brand-text">Canal direto</h3>

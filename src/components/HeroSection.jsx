@@ -26,7 +26,7 @@ function HeroSection({ personal, links, highlights }) {
     <section id="inicio" className="section-anchor">
       <Reveal className="glass-panel relative overflow-hidden rounded-4xl border border-white/10 p-6 shadow-soft sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -right-14 -top-14 h-56 w-56 rounded-full bg-brand-cyan/15 blur-3xl" />
-        <div className="pointer-events-none absolute -left-12 bottom-0 h-44 w-44 rounded-full bg-brand-emerald/15 blur-3xl" />
+        <div className="pointer-events-none absolute -left-12 bottom-0 h-44 w-44 rounded-full bg-brand-accent/15 blur-3xl" />
 
         <div className="relative grid items-start gap-8 xl:grid-cols-[minmax(0,1.25fr)_minmax(0,0.95fr)]">
           <div className="flex flex-col gap-5">
@@ -94,7 +94,7 @@ function HeroSection({ personal, links, highlights }) {
 
               <Motion.a
                 href="#contato"
-                className="fx-btn inline-flex items-center gap-2 rounded-xl border border-brand-emerald/35 bg-brand-emerald/10 px-4 py-3 text-sm font-semibold text-brand-text transition hover:border-brand-emerald/55 hover:bg-brand-emerald/15"
+                className="fx-btn inline-flex items-center gap-2 rounded-xl border border-brand-cyan/35 bg-brand-cyan/10 px-4 py-3 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/55 hover:bg-brand-cyan/15"
                 whileHover={{ y: -2, scale: 1.015 }}
                 whileTap={{ scale: 0.985 }}
               >

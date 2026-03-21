@@ -12,7 +12,6 @@ export default {
           muted: '#8ea2c7',
           accent: '#3b82f6',
           cyan: '#06b6d4',
-          emerald: '#34d399',
         },
       },
       fontFamily: {

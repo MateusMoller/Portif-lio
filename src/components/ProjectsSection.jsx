@@ -33,7 +33,7 @@ function ProjectsSection({ projects }) {
               </div>
 
               <p className="mt-4 text-sm leading-relaxed text-slate-200">{project.description}</p>
-              <p className="mt-3 rounded-xl border border-brand-emerald/25 bg-brand-emerald/10 px-3 py-2 text-sm text-brand-muted">
+              <p className="mt-3 rounded-xl border border-brand-cyan/25 bg-brand-cyan/10 px-3 py-2 text-sm text-brand-muted">
                 {project.context}
               </p>
 
@@ -60,7 +60,7 @@ function ProjectsSection({ projects }) {
               <p className="mt-4 text-xs leading-relaxed text-brand-muted/90">{project.sourceNote}</p>
 
               {project.dataLimited ? (
-                <p className="mt-2 text-xs text-amber-300/90">
+                <p className="mt-2 text-xs text-brand-cyan/90">
                   Estrutura do repositorio ainda em fase inicial. O card esta pronto para ser enriquecido conforme
                   novas entregas forem publicadas.
                 </p>

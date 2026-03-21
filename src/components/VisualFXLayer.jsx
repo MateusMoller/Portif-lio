@@ -1,4 +1,4 @@
-﻿function VisualFXLayer() {
+function VisualFXLayer() {
   return (
     <div aria-hidden="true" className="fx-layer">
       <div className="fx-orb orb-one" />

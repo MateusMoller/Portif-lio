@@ -1,18 +1,18 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
         brand: {
-          bg: '#f4f7fb',
-          surface: '#ffffff',
-          panel: '#e8eef6',
-          text: '#12263a',
-          muted: '#526477',
-          accent: '#0f6bff',
-          cyan: '#0d9488',
-          emerald: '#047857',
+          bg: '#050a14',
+          surface: '#0d1529',
+          panel: '#121d35',
+          text: '#e6eeff',
+          muted: '#8ea2c7',
+          accent: '#3b82f6',
+          cyan: '#06b6d4',
+          emerald: '#34d399',
         },
       },
       fontFamily: {
@@ -20,8 +20,8 @@ export default {
         display: ['Sora', 'sans-serif'],
       },
       boxShadow: {
-        glow: '0 12px 32px rgba(15, 107, 255, 0.22)',
-        soft: '0 16px 40px rgba(15, 23, 42, 0.10)',
+        glow: '0 12px 40px rgba(59, 130, 246, 0.25)',
+        soft: '0 14px 38px rgba(0, 0, 0, 0.28)',
       },
       borderRadius: {
         '4xl': '2rem',

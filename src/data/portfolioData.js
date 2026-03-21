@@ -2,10 +2,11 @@
   personal: {
     name: 'Mateus Moller',
     role: 'Analista de Processos | Estudante de Engenharia de Producao',
-    headline: 'Tecnologia aplicada para ganho operacional.',
-    subtitle: 'Dados, automacao e processos para uma operacao mais eficiente.',
+    headline: 'Tecnologia aplicada ao ambiente industrial com foco em eficiencia real.',
+    subtitle:
+      'Desenvolvo solucoes que conectam TI, processos e engenharia para transformar rotinas operacionais em fluxos mais rapidos, padronizados e confiaveis.',
     location: 'Taquara, RS - Brasil',
-    availability: 'Disponivel para oportunidades em processos, automacao e tecnologia aplicada.',
+    availability: 'Disponivel para networking, colaboracoes e oportunidades em processos, automacao e tecnologia aplicada.',
     avatarUrl: 'https://avatars.githubusercontent.com/u/173965532?v=4',
     resumeUrl: '/curriculo-mateus.pdf',
     email: 'mateushmoller@gmail.com',
@@ -31,26 +32,27 @@
     { label: 'Contato', href: '#contato' },
   ],
   highlights: [
-    { value: '5', label: 'Repositorios ativos no GitHub' },
-    { value: '2025-2026', label: 'Atuacao em processos industriais e administrativos' },
-    { value: 'FURG', label: 'Engenharia de Producao em andamento' },
-    { value: 'Mecanica', label: 'Base tecnica para integrar operacao e engenharia' },
+    { value: '5', label: 'Repositorios publicos no GitHub' },
+    { value: '2025-2026', label: 'Experiencia recente em processos industriais e administrativos' },
+    { value: 'FURG', label: 'Graduacao em Engenharia de Producao (em andamento)' },
+    { value: 'Tecnico em Mecanica', label: 'Base tecnica para atuar entre operacao e engenharia' },
   ],
   about: {
-    title: 'Tecnologia com foco operacional',
-    intro: 'Atuacao em processos, dados e automacao para transformar rotina em resultado.',
+    title: 'Sobre Mim',
+    intro:
+      'Sou analista de processos com atuacao em industria e servicos, e estudante de Engenharia de Producao. Meu foco esta em transformar rotina operacional em fluxo organizado, mensuravel e eficiente.',
     paragraphs: [
-      'Mapeamento e padronizacao de fluxos produtivos e administrativos.',
-      'Integracao entre operacao, engenharia e tecnologia para decisao rapida.',
-      'Melhoria continua com foco em qualidade, produtividade e execucao real.',
+      'Tenho experiencia pratica no mapeamento, organizacao e padronizacao de processos produtivos e administrativos, incluindo rotinas trabalhistas e fluxos internos.',
+      'Atuo conectando operacao, engenharia e tecnologia com ferramentas como ERP, Excel e Power BI para melhorar visibilidade, controle e tomada de decisao.',
+      'Busco evoluir como lider tecnico de melhoria e automacao de processos, mantendo foco em qualidade, seguranca, produtividade e resultado real.',
     ],
     focusTags: [
-      'Tecnologia aplicada',
+      'Tecnologia aplicada a industria',
       'Automacao de processos',
-      'Sistemas internos',
-      'Integracao operacao e TI',
+      'Desenvolvimento de sistemas internos',
+      'Integracao entre operacao e TI',
       'ERP, Excel e Power BI',
-      'Melhoria continua',
+      'Padronizacao e melhoria continua',
     ],
   },
   skills: [
@@ -236,75 +238,87 @@
   projects: [
     {
       name: 'processos-contabeis',
-      description: 'Central para organizar fluxos, procedimentos e documentos operacionais.',
+      description:
+        'Central de processos internos para armazenar e organizar fluxos, procedimentos e documentos operacionais, com foco em padronizacao e melhoria continua.',
       repositoryUrl: 'https://github.com/MateusMoller/processos-contabeis',
       status: 'Ativo',
-      context: 'Governanca operacional com consulta rapida e execucao padronizada.',
+      context:
+        'Repositorio orientado a governanca operacional no escritorio, facilitando consulta rapida e consistencia na execucao das rotinas.',
       stack: ['Documentacao Tecnica', 'Padronizacao de Processos', 'Fluxos Operacionais', 'Melhoria Continua'],
       highlightPoints: [
-        'Centraliza processos em um unico ponto de referencia.',
-        'Apoia treinamento interno com instrucoes reutilizaveis.',
-        'Reduz variacao com padroes claros de rotina.',
+        'Centraliza processos e procedimentos em um unico ponto de referencia.',
+        'Apoia treinamento interno com instrucoes organizadas e reutilizaveis.',
+        'Reduz variacao de execucao por meio de padroes claros de rotina.',
       ],
-      sourceNote: 'Descricao baseada no repositorio publico e README.',
+      sourceNote:
+        'Descricao baseada no repositorio publico e no README da central de processos.',
       featured: true,
     },
     {
       name: 'Consulta-Imagens-Rech',
-      description: 'Ferramenta em Python para localizar imagens por texto com atalho global.',
+      description:
+        'Ferramenta em Python para localizar e abrir imagens por texto selecionado, via atalho global, reduzindo tempo em consultas internas com alto volume de arquivos.',
       repositoryUrl: 'https://github.com/MateusMoller/Consulta-Imagens-Rech',
       status: 'Concluido e aplicado',
-      context: 'Projeto aplicado na rotina interna da Reginato Metais.',
+      context: 'Projeto desenvolvido para a rotina interna da empresa Reginato Metais.',
       stack: ['Python', 'Automacao', 'Windows', 'PyInstaller', 'HTML', 'CSS'],
       highlightPoints: [
-        'Captura texto selecionado e dispara busca imediata.',
-        'Executavel para uso direto em estacoes Windows.',
-        'Foco em agilidade para ambiente de producao.',
+        'Captura texto selecionado em qualquer aplicacao e dispara busca imediata.',
+        'Executavel para uso direto em estacoes Windows sem configuracao complexa.',
+        'Estrutura orientada a ganho de agilidade em ambiente de producao.',
       ],
-      sourceNote: 'Dados baseados no repositorio publico do projeto.',
+      sourceNote:
+        'Dados baseados no repositorio publico e documentacao do projeto no GitHub.',
       featured: true,
     },
     {
       name: 'Painel-de-Controle-Para-Galvonoplastia-Est-tica',
-      description: 'Proposta de painel para monitoramento de processos de galvanoplastia estatica.',
+      description:
+        'Proposta de sistema para monitoramento e gestao de processos de galvanoplastia estatica, com visao centralizada das etapas de tratamento de superficies metalicas.',
       repositoryUrl:
         'https://github.com/MateusMoller/Painel-de-Controle-Para-Galvonoplastia-Est-tica',
       status: 'Em estruturacao publica',
-      context: 'Base para evolucao de um painel tecnico de operacao industrial.',
+      context:
+        'Repositorio criado para evoluir um painel tecnico voltado a operacao industrial.',
       stack: ['React', 'Vite', 'JavaScript', 'Interface de Controle', 'Processos Industriais'],
       highlightPoints: [
-        'Monitoramento etapa por etapa da linha de tratamento.',
-        'Gestao visual para decisao mais rapida.',
-        'Base pronta para crescimento incremental.',
+        'Direcionado a monitoramento de etapa por etapa da linha de tratamento.',
+        'Conceito de gestao visual para tomada de decisao mais rapida.',
+        'Base pronta para crescimento incremental conforme requisitos de fabrica.',
       ],
-      sourceNote: 'Descricao oficial do repositorio GitHub.',
+      sourceNote:
+        'Descricao oficial extraida do repositorio GitHub. Estrutura atual ainda sem arquivos de implementacao.',
       featured: true,
       dataLimited: true,
     },
     {
       name: 'Portif-lio',
-      description: 'Portfolio em React com foco em identidade tecnica e posicionamento profissional.',
+      description:
+        'Portifolio profissional em React com foco em identidade tecnica, apresentacao de projetos e posicionamento para oportunidades em tecnologia aplicada.',
       repositoryUrl: 'https://github.com/MateusMoller/Portif-lio',
       status: 'Ativo',
-      context: 'Projeto autoral com deploy automatizado no GitHub Pages.',
+      context:
+        'Projeto autoral publicado com deploy automatizado no GitHub Pages e estrutura pronta para manutencao continua.',
       stack: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions', 'GitHub Pages'],
       highlightPoints: [
-        'Arquitetura componentizada para manutencao rapida.',
-        'Visual responsivo para desktop e mobile.',
-        'Pipeline automatizada para publicacao continua.',
+        'Arquitetura componentizada para editar secoes e dados com rapidez.',
+        'Visual responsivo com foco em UX para desktop e mobile.',
+        'Pipeline de build e deploy automatizada para publicacao continua.',
       ],
-      sourceNote: 'Dados do repositorio publico e deploy ativo.',
+      sourceNote:
+        'Dados extraidos do repositorio publico Portif-lio e da configuracao de deploy ativa.',
       featured: true,
     },
   ],
   professionalProfile: {
     title: 'Perfil Profissional e Trajetoria',
-    overview: 'Melhoria de processos com integracao entre operacao, engenharia e tecnologia.',
+    overview:
+      'Atuacao orientada a melhoria de processos, padronizacao e integracao entre operacao, engenharia e tecnologia.',
     pillars: [
-      'Melhoria continua com foco em entrega.',
-      'Padronizacao de metodos e processos.',
-      'Automacao aplicada a rotina operacional.',
-      'Evolucao para lideranca tecnica colaborativa.',
+      'Crescimento pessoal e da equipe com foco em melhoria continua.',
+      'Aprimoramento constante de metodos, processos e padroes operacionais.',
+      'Atuacao em melhoria e automacao de processos com foco pratico.',
+      'Desenvolvimento para lideranca tecnica eficiente e colaborativa.',
     ],
     experiences: [
       {
@@ -312,21 +326,24 @@
         company: 'Grow Contabilidade',
         location: 'Taquara, RS',
         period: 'Desde fevereiro de 2026',
-        description: 'Criacao e padronizacao de processos internos com foco em eficiencia e qualidade.',
+        description:
+          'Responsavel por criacao, organizacao e padronizacao de processos internos, com mapeamento de rotinas trabalhistas e documentacao de procedimentos para elevar eficiencia e qualidade.',
       },
       {
         role: 'Lider / Analista de Processos',
         company: 'Reginato Metais',
         location: 'Campo Bom, RS',
         period: 'Setembro de 2025 a fevereiro de 2026',
-        description: 'Analise e otimizacao de processos produtivos com foco em eficiencia e indicadores.',
+        description:
+          'Atuacao em analise, desenvolvimento e otimizacao de processos produtivos, com foco em eficiencia, qualidade, seguranca, indicadores e integracao entre engenharia, qualidade e operacao.',
       },
       {
         role: 'Analista e Programador de PCP',
         company: 'Reginato Metais',
         location: 'Campo Bom, RS',
         period: 'Marco de 2025 a setembro de 2025',
-        description: 'Atuacao em PCP com ERP SIGER, Excel e Power BI para controle de producao.',
+        description:
+          'Atuacao em PCP com ERP SIGER, controle de estoque com Excel e analise de dados de producao utilizando Power BI e planilhas dinamicas.',
       },
     ],
     education: [
@@ -375,8 +392,9 @@
   },
   contact: {
     title: 'Contato',
-    description: 'Aberto para projetos, colaboracoes e oportunidades em tecnologia aplicada.',
-    callToAction: 'Vamos construir solucoes com impacto real na operacao.',
+    description:
+      'Aberto para conversar sobre projetos, colaboracoes e oportunidades em tecnologia aplicada a industria.',
+    callToAction: 'Vamos construir solucoes tecnicas com impacto real na operacao.',
   },
 }
 

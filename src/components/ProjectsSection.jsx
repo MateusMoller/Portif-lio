@@ -1,5 +1,5 @@
-import { motion as Motion } from 'framer-motion'
-import { ExternalLink, Github, Workflow } from 'lucide-react'
+﻿import { motion as Motion } from 'framer-motion'
+import { ExternalLink, Github } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeader from './SectionHeader'
 import TiltCard from './TiltCard'
@@ -10,8 +10,8 @@ function ProjectsSection({ projects }) {
       <Reveal>
         <SectionHeader
           eyebrow="Projetos"
-          title="Projetos com foco em resultado"
-          description="Cards objetivos com stack, impacto e acesso rapido ao repositorio."
+          title="Projetos com aplicacao pratica"
+          description="Selecao baseada em repositorios publicos do GitHub, priorizando iniciativas conectadas a produtividade, automacao e operacao industrial."
         />
       </Reveal>
 
@@ -19,43 +19,26 @@ function ProjectsSection({ projects }) {
         {projects.map((project, index) => (
           <Reveal key={project.name} delay={index * 70}>
             <TiltCard
-              className={`fx-card group flex h-full flex-col rounded-3xl border p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/[0.06] ${
+              className={`fx-card flex h-full flex-col rounded-3xl border p-6 transition duration-300 hover:bg-white/[0.06] ${
                 project.featured
                   ? 'border-brand-cyan/35 bg-gradient-to-br from-brand-cyan/10 via-brand-accent/5 to-transparent'
                   : 'border-white/10 bg-white/[0.03]'
               }`}
             >
-              <div className="project-preview rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-brand-muted">
-                    {project.status}
-                  </span>
-                  <span className="text-xs uppercase tracking-[0.14em] text-brand-cyan/85">
-                    Projeto {index + 1}
-                  </span>
-                </div>
-
-                <div className="mt-7">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-brand-cyan/25 bg-brand-cyan/10 px-2.5 py-1 text-[11px] uppercase tracking-[0.12em] text-brand-cyan">
-                    <Workflow size={12} />
-                    Tecnologia Aplicada
-                  </span>
-
-                  <h3 className="mt-3 text-xl font-semibold leading-tight text-brand-text">{project.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-brand-muted">{project.context}</p>
-                </div>
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-xl font-semibold leading-tight text-brand-text">{project.name}</h3>
+                <span className="whitespace-nowrap rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-brand-muted">
+                  {project.status}
+                </span>
               </div>
 
               <p className="mt-4 text-sm leading-relaxed text-slate-200">{project.description}</p>
-
-              {project.highlightPoints?.length ? (
-                <p className="mt-2 text-sm text-brand-muted">
-                  {project.highlightPoints[0]}
-                </p>
-              ) : null}
+              <p className="mt-3 rounded-xl border border-brand-cyan/25 bg-brand-cyan/10 px-3 py-2 text-sm text-brand-muted">
+                {project.context}
+              </p>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.stack.slice(0, 5).map((item) => (
+                {project.stack.map((item) => (
                   <Motion.span
                     key={`${project.name}-${item}`}
                     className="rounded-full border border-white/15 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-200"
@@ -66,13 +49,24 @@ function ProjectsSection({ projects }) {
                 ))}
               </div>
 
+              <ul className="mt-5 space-y-2">
+                {project.highlightPoints.map((point) => (
+                  <li key={point} className="text-sm leading-relaxed text-brand-muted">
+                    - {point}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-4 text-xs leading-relaxed text-brand-muted/90">{project.sourceNote}</p>
+
               {project.dataLimited ? (
-                <p className="mt-3 rounded-xl border border-brand-cyan/25 bg-brand-cyan/10 px-3 py-2 text-xs text-brand-cyan/90">
-                  Estrutura inicial: pronto para receber prints, mockups e dashboard do projeto.
+                <p className="mt-2 text-xs text-brand-cyan/90">
+                  Estrutura do repositorio ainda em fase inicial. O card esta pronto para ser enriquecido conforme
+                  novas entregas forem publicadas.
                 </p>
               ) : null}
 
-              <div className="mt-auto flex flex-wrap gap-3 pt-5">
+              <div className="mt-auto flex flex-wrap gap-3 pt-6">
                 <Motion.a
                   href={project.repositoryUrl}
                   target="_blank"
@@ -106,3 +100,4 @@ function ProjectsSection({ projects }) {
 }
 
 export default ProjectsSection
+

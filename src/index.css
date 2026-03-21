@@ -111,41 +111,6 @@ body::before {
   );
 }
 
-.hero-grid-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.22;
-  background-image:
-    linear-gradient(rgba(125, 211, 252, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125, 211, 252, 0.16) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(circle at 50% 38%, black 22%, transparent 78%);
-}
-
-.project-preview {
-  position: relative;
-  overflow: hidden;
-}
-
-.project-preview::before {
-  content: '';
-  position: absolute;
-  inset: auto -22% -46% -22%;
-  height: 72%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0) 72%);
-  pointer-events: none;
-}
-
-.project-preview::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(125, 211, 252, 0.12);
-  pointer-events: none;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(18px) scale(0.985);

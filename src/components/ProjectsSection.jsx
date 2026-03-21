@@ -1,95 +1,146 @@
 ﻿import { motion as Motion } from 'framer-motion'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, Star } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeader from './SectionHeader'
 import TiltCard from './TiltCard'
 
-function ProjectsSection({ projects }) {
+function CaseField({ label, text }) {
   return (
-    <section id="projetos" className="section-anchor">
+    <div>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-accent">{label}</p>
+      <p className="mt-1 text-sm leading-relaxed text-brand-muted">{text}</p>
+    </div>
+  )
+}
+
+function CaseLinks({ links }) {
+  return (
+    <div className="mt-5 flex flex-wrap gap-2">
+      {links?.github ? (
+        <Motion.a
+          href={links.github}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-outline"
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <Github size={15} />
+          GitHub
+        </Motion.a>
+      ) : null}
+
+      {links?.demo ? (
+        <Motion.a
+          href={links.demo}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-soft"
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Demo
+          <ExternalLink size={15} />
+        </Motion.a>
+      ) : (
+        <span className="btn-soft cursor-default opacity-80">
+          Demo em evolução
+          <ExternalLink size={15} />
+        </span>
+      )}
+    </div>
+  )
+}
+
+function ProjectsSection({ projects }) {
+  const featured = projects.featured
+
+  return (
+    <section id="cases" className="section-anchor">
       <Reveal>
-        <SectionHeader
-          eyebrow="Projetos"
-          title="Projetos com aplicacao pratica"
-          description="Selecao baseada em repositorios publicos do GitHub, priorizando iniciativas conectadas a produtividade, automacao e operacao industrial."
-        />
+        <SectionHeader eyebrow="Cases" title={projects.title} description={projects.description} />
       </Reveal>
 
-      <div className="grid items-stretch gap-6 xl:grid-cols-2">
-        {projects.map((project, index) => (
-          <Reveal key={project.name} delay={index * 70}>
-            <TiltCard
-              className={`fx-card flex h-full flex-col rounded-3xl border p-6 transition duration-300 hover:bg-white/[0.06] ${
-                project.featured
-                  ? 'border-brand-cyan/35 bg-gradient-to-br from-brand-cyan/10 via-brand-accent/5 to-transparent'
-                  : 'border-white/10 bg-white/[0.03]'
-              }`}
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-xl font-semibold leading-tight text-brand-text">{project.name}</h3>
-                <span className="whitespace-nowrap rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-brand-muted">
+      <Reveal delay={70}>
+        <TiltCard className="fx-card rounded-3xl border border-brand-accent/30 bg-gradient-to-br from-blue-50 via-white to-cyan-50 p-6 sm:p-7">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="inline-flex items-center gap-2 rounded-full border border-brand-accent/25 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-accent">
+              <Star size={13} />
+              Projeto principal
+            </p>
+
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-brand-muted">
+              {featured.status}
+            </span>
+          </div>
+
+          <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-brand-text sm:text-3xl">{featured.title}</h3>
+
+          <div className="mt-5 grid gap-4 lg:grid-cols-2">
+            <CaseField label="Problema" text={featured.problem} />
+            <CaseField label="Solução" text={featured.solution} />
+          </div>
+
+          <div className="mt-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-accent">Stack</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {featured.stack.map((item) => (
+                <span
+                  key={`${featured.title}-${item}`}
+                  className="rounded-full border border-white bg-white px-3 py-1 text-xs font-medium text-slate-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-2xl border border-brand-cyan/25 bg-teal-50 p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">Resultado</p>
+            <p className="mt-1 text-sm leading-relaxed text-slate-800">{featured.result}</p>
+          </div>
+
+          <CaseLinks links={featured.links} />
+        </TiltCard>
+      </Reveal>
+
+      <div className="mt-6 grid gap-4 xl:grid-cols-3">
+        {projects.secondary.map((project, index) => (
+          <Reveal key={project.title} delay={index * 60}>
+            <TiltCard className="fx-card flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-5">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <h3 className="text-lg font-semibold text-brand-text">{project.title}</h3>
+                <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-muted">
                   {project.status}
                 </span>
               </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-slate-200">{project.description}</p>
-              <p className="mt-3 rounded-xl border border-brand-emerald/25 bg-brand-emerald/10 px-3 py-2 text-sm text-brand-muted">
-                {project.context}
-              </p>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                  <Motion.span
-                    key={`${project.name}-${item}`}
-                    className="rounded-full border border-white/15 bg-white/[0.03] px-2.5 py-1 text-xs text-slate-200"
-                    whileHover={{ y: -2, scale: 1.03 }}
-                  >
-                    {item}
-                  </Motion.span>
-                ))}
+              <div className="mt-4 space-y-3">
+                <CaseField label="Problema" text={project.problem} />
+                <CaseField label="Solução" text={project.solution} />
               </div>
 
-              <ul className="mt-5 space-y-2">
-                {project.highlightPoints.map((point) => (
-                  <li key={point} className="text-sm leading-relaxed text-brand-muted">
-                    - {point}
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-accent">Stack</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <span
+                      key={`${project.title}-${item}`}
+                      className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-              <p className="mt-4 text-xs leading-relaxed text-brand-muted/90">{project.sourceNote}</p>
+              <div className="mt-4 rounded-2xl border border-brand-cyan/25 bg-teal-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">Resultado</p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-800">{project.result}</p>
+              </div>
 
-              {project.dataLimited ? (
-                <p className="mt-2 text-xs text-amber-300/90">
-                  Estrutura do repositorio ainda em fase inicial. O card esta pronto para ser enriquecido conforme
-                  novas entregas forem publicadas.
-                </p>
-              ) : null}
-
-              <div className="mt-auto flex flex-wrap gap-3 pt-6">
-                <Motion.a
-                  href={project.repositoryUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="fx-btn inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/45 hover:bg-white/10"
-                  whileHover={{ y: -2, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Github size={15} />
-                  Repositorio
-                </Motion.a>
-
-                <Motion.a
-                  href={project.repositoryUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="fx-btn inline-flex items-center gap-2 rounded-xl border border-brand-cyan/35 bg-brand-cyan/10 px-4 py-2 text-sm font-semibold text-brand-text transition hover:border-brand-cyan/55 hover:bg-brand-cyan/15"
-                  whileHover={{ y: -2, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Ver Detalhes
-                  <ExternalLink size={15} />
-                </Motion.a>
+              <div className="mt-auto">
+                <CaseLinks links={project.links} />
               </div>
             </TiltCard>
           </Reveal>
@@ -100,4 +151,3 @@ function ProjectsSection({ projects }) {
 }
 
 export default ProjectsSection
-

@@ -7,9 +7,7 @@ function FloatingWhatsAppButton({ whatsapp }) {
   }
 
   const cleanNumber = whatsapp.number.replace(/\D/g, '')
-  const text = encodeURIComponent(
-    whatsapp.message ?? 'Ola! Vi seu portfolio e gostaria de conversar.',
-  )
+  const text = encodeURIComponent(whatsapp.message ?? 'Olá! Vi seu portfólio e gostaria de conversar.')
   const whatsappUrl = `https://wa.me/${cleanNumber}?text=${text}`
 
   return (
@@ -18,8 +16,8 @@ function FloatingWhatsAppButton({ whatsapp }) {
       target="_blank"
       rel="noreferrer"
       aria-label={`Abrir conversa no WhatsApp (${whatsapp.display ?? cleanNumber})`}
-      className="fixed bottom-5 right-5 z-[60] inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500 px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_36px_rgba(16,185,129,0.45)] transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
-      whileHover={{ scale: 1.05 }}
+      className="fixed bottom-5 right-5 z-[60] inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-emerald-600 px-4 py-3 text-sm font-semibold text-white shadow-[0_14px_32px_rgba(5,150,105,0.35)] transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40"
+      whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.95 }}
     >
       <BsWhatsapp className="h-5 w-5" />
@@ -29,4 +27,3 @@ function FloatingWhatsAppButton({ whatsapp }) {
 }
 
 export default FloatingWhatsAppButton
-

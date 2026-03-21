@@ -1,112 +1,133 @@
+﻿import { motion as Motion } from 'framer-motion'
+import { Award, BriefcaseBusiness, Download, Github, GraduationCap, Linkedin } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeader from './SectionHeader'
 import TiltCard from './TiltCard'
 
-function ProfileSection({ profile }) {
-  const timelineItems =
-    profile.experiences?.length > 0 ? profile.experiences : profile.trajectory ?? []
+function getLinkIcon(label) {
+  if (label === 'GitHub') return Github
+  if (label === 'LinkedIn') return Linkedin
+  return Download
+}
 
+function ProfileSection({ credibility }) {
   return (
-    <section id="perfil" className="section-anchor">
+    <section id="credibilidade" className="section-anchor">
       <Reveal>
-        <SectionHeader eyebrow="Perfil Profissional" title={profile.title} description={profile.overview} />
+        <SectionHeader
+          eyebrow="Credibilidade"
+          title={credibility.title}
+          description={credibility.description}
+        />
       </Reveal>
 
-      <div className="grid items-stretch gap-5 lg:grid-cols-[1.02fr_1.38fr]">
-        <Reveal delay={80}>
-          <TiltCard className="glass-panel fx-card h-full rounded-3xl border border-white/10 p-6">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-cyan">
-              Direcionamento Profissional
+      <div className="grid items-stretch gap-5 xl:grid-cols-[1.05fr_1.1fr_1fr]">
+        <Reveal delay={70}>
+          <TiltCard className="fx-card h-full rounded-3xl border border-slate-200 bg-white p-6">
+            <p className="mb-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-brand-accent">
+              <BriefcaseBusiness size={15} />
+              Presença profissional
             </p>
-            <ul className="space-y-3">
-              {profile.pillars.map((pillar) => (
-                <li key={pillar} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-slate-200">
-                  {pillar}
+
+            <div className="space-y-3">
+              {credibility.links.map((item) => {
+                const Icon = getLinkIcon(item.label)
+
+                return (
+                  <Motion.a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-brand-accent/40 hover:bg-blue-50"
+                    whileHover={{ y: -2 }}
+                  >
+                    <p className="inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
+                      <Icon size={15} />
+                      {item.label}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-brand-muted">{item.description}</p>
+                  </Motion.a>
+                )
+              })}
+            </div>
+
+            <p className="mt-4 text-sm leading-relaxed text-brand-muted">{credibility.appliedProjectsNote}</p>
+          </TiltCard>
+        </Reveal>
+
+        <Reveal delay={110}>
+          <TiltCard className="fx-card h-full rounded-3xl border border-slate-200 bg-white p-6">
+            <p className="mb-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-brand-accent">
+              <GraduationCap size={15} />
+              Formação e certificações
+            </p>
+
+            <div className="space-y-4">
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">Formação</p>
+                <div className="space-y-3">
+                  {credibility.formation.map((item) => (
+                    <article key={`${item.course}-${item.institution}`} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                      <h3 className="text-sm font-semibold text-brand-text">{item.course}</h3>
+                      <p className="mt-1 text-sm text-brand-muted">{item.institution}</p>
+                      <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-accent">
+                        {item.status}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">Certificações</p>
+                <div className="space-y-3">
+                  {credibility.certifications.map((item) => (
+                    <article key={`${item.name}-${item.institution}`} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                      <h3 className="text-sm font-semibold text-brand-text">{item.name}</h3>
+                      <p className="mt-1 text-sm text-brand-muted">{item.institution}</p>
+                      <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-accent">
+                        {item.status}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </TiltCard>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <TiltCard className="fx-card h-full rounded-3xl border border-slate-200 bg-white p-6">
+            <p className="mb-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-brand-accent">
+              <Award size={15} />
+              Evidências de atuação
+            </p>
+
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">Experiência aplicada</p>
+            <ul className="space-y-2">
+              {credibility.experienceFocus.map((item) => (
+                <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-brand-muted">
+                  {item}
                 </li>
               ))}
             </ul>
 
-            {profile.profileTraits?.length ? (
-              <>
-                <p className="mb-4 mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-brand-cyan">
-                  Perfil
-                </p>
-                <ul className="space-y-2">
-                  {profile.profileTraits.map((trait) => (
-                    <li key={trait} className="text-sm text-brand-muted">
-                      - {trait}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : null}
-          </TiltCard>
-        </Reveal>
-
-        <Reveal delay={130}>
-          <TiltCard className="fx-card h-full rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.16em] text-brand-cyan">
-              Experiencia
+            <p className="mb-3 mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-brand-cyan">
+              Tecnologias dominadas
             </p>
-
-            <div className="relative border-l border-white/15 pl-5">
-              {timelineItems.map((item) => {
-                const key = `${item.title ?? item.role}-${item.company ?? ''}-${item.period ?? ''}`
-                const heading = item.title ?? item.role
-                const metaParts = [item.company, item.location, item.period].filter(Boolean)
-
-                return (
-                  <article key={key} className="relative mb-5 last:mb-0">
-                    <span className="absolute -left-[27px] top-1 h-3 w-3 rounded-full border border-brand-cyan/40 bg-brand-bg" />
-                    <h3 className="text-base font-semibold text-brand-text">{heading}</h3>
-                    {metaParts.length ? (
-                      <p className="mt-1 text-xs uppercase tracking-[0.12em] text-brand-cyan/90">
-                        {metaParts.join(' - ')}
-                      </p>
-                    ) : null}
-                    <p className="mt-2 text-sm leading-relaxed text-brand-muted">
-                      {item.description}
-                    </p>
-                  </article>
-                )
-              })}
+            <div className="flex flex-wrap gap-2">
+              {credibility.dominantTechnologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </TiltCard>
         </Reveal>
-      </div>
-
-      <div className="mt-5 grid items-stretch gap-5 lg:grid-cols-2">
-        {profile.education?.length ? (
-          <Reveal delay={170}>
-            <TiltCard className="fx-card h-full rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-cyan">Formacao</p>
-              <div className="space-y-4">
-                {profile.education.map((item) => (
-                  <article key={`${item.course}-${item.institution}`} className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-                    <h3 className="text-sm font-semibold text-brand-text">{item.course}</h3>
-                    <p className="mt-1 text-sm text-brand-muted">{item.institution}</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.12em] text-brand-cyan/90">{item.status}</p>
-                  </article>
-                ))}
-              </div>
-            </TiltCard>
-          </Reveal>
-        ) : null}
-
-        {profile.languages?.length ? (
-          <Reveal delay={210}>
-            <TiltCard className="fx-card h-full rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-cyan">Idiomas</p>
-              <ul className="space-y-2">
-                {profile.languages.map((language) => (
-                  <li key={language} className="rounded-xl border border-white/10 bg-white/[0.02] px-3 py-2 text-sm text-slate-200">
-                    {language}
-                  </li>
-                ))}
-              </ul>
-            </TiltCard>
-          </Reveal>
-        ) : null}
       </div>
     </section>
   )

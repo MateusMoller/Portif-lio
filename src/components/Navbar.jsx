@@ -1,4 +1,4 @@
-import { motion as Motion } from 'framer-motion'
+import { Motion } from '../utils/motion'
 import { Download, Github, Linkedin, Mail } from 'lucide-react'
 
 function Navbar({ name, navigation, links, resumeUrl }) {

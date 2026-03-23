@@ -11,7 +11,7 @@
     resumeUrl: '/curriculo-mateus.pdf',
     email: 'mateushmoller@gmail.com',
     phone: '+55 51 99861-2360',
-    githubLastUpdate: '20/03/2026',
+    githubLastUpdate: '21/03/2026',
   },
   links: {
     github: 'https://github.com/MateusMoller',
@@ -32,7 +32,7 @@
     { label: 'Contato', href: '#contato' },
   ],
   highlights: [
-    { value: '5', label: 'Repositorios publicos no GitHub' },
+    { value: '6', label: 'Repositorios publicos no GitHub' },
     { value: '2025-2026', label: 'Experiencia recente em processos industriais e administrativos' },
     { value: 'FURG', label: 'Graduacao em Engenharia de Producao (em andamento)' },
     { value: 'Tecnico em Mecanica', label: 'Base tecnica para atuar entre operacao e engenharia' },
@@ -292,22 +292,23 @@
       dataLimited: true,
     },
     {
-      name: 'Portif-lio',
+      name: 'grow-finance-hub',
       description:
-        'Portifolio profissional em React com foco em identidade tecnica, apresentacao de projetos e posicionamento para oportunidades em tecnologia aplicada.',
-      repositoryUrl: 'https://github.com/MateusMoller/Portif-lio',
-      status: 'Ativo',
+        'Hub de apoio financeiro interno com estrutura inicial em TypeScript para consolidar rotinas e visibilidade de dados.',
+      repositoryUrl: 'https://github.com/MateusMoller/grow-finance-hub',
+      status: 'Em evolucao',
       context:
-        'Projeto autoral publicado com deploy automatizado no GitHub Pages e estrutura pronta para manutencao continua.',
-      stack: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions', 'GitHub Pages'],
+        'Repositorio recente, publicado em 21/03/2026, com base pronta para evolucao incremental.',
+      stack: ['TypeScript', 'React', 'Vite', 'Gestao Financeira', 'Dashboard'],
       highlightPoints: [
-        'Arquitetura componentizada para editar secoes e dados com rapidez.',
-        'Visual responsivo com foco em UX para desktop e mobile.',
-        'Pipeline de build e deploy automatizada para publicacao continua.',
+        'Projeto novo para centralizar informacoes financeiras em um unico hub.',
+        'Estrutura inicial focada em escalabilidade e organizacao por modulos.',
+        'Pronto para evoluir com regras de negocio e automacoes internas.',
       ],
       sourceNote:
-        'Dados extraidos do repositorio publico Portif-lio e da configuracao de deploy ativa.',
+        'Informacoes baseadas no repositorio publico grow-finance-hub no GitHub.',
       featured: true,
+      dataLimited: true,
     },
   ],
   professionalProfile: {

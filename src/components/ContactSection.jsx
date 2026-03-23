@@ -1,4 +1,4 @@
-﻿import { motion as Motion } from 'framer-motion'
+import { Motion } from '../utils/motion'
 import { ArrowUpRight, Github, Linkedin, Mail, Wrench } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeader from './SectionHeader'

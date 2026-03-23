@@ -1,6 +1,6 @@
-import { AnimatePresence, motion as Motion } from 'framer-motion'
-import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react'
+import { AnimatePresence, Motion, useReducedMotion } from '../utils/motion'
 import Reveal from './Reveal'
 import TiltCard from './TiltCard'
 
@@ -13,14 +13,19 @@ const rotatingInsights = [
 
 function HeroSection({ personal, links, highlights }) {
   const [activeInsight, setActiveInsight] = useState(0)
+  const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
+    if (shouldReduceMotion) {
+      return undefined
+    }
+
     const intervalId = window.setInterval(() => {
       setActiveInsight((previous) => (previous + 1) % rotatingInsights.length)
     }, 3000)
 
     return () => window.clearInterval(intervalId)
-  }, [])
+  }, [shouldReduceMotion])
 
   return (
     <section id="inicio" className="section-anchor">
@@ -130,7 +135,11 @@ function HeroSection({ personal, links, highlights }) {
                   src={personal.avatarUrl}
                   alt={`Foto de perfil de ${personal.name}`}
                   className="h-12 w-12 rounded-xl border border-white/15 object-cover"
-                  loading="lazy"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
 
                 <div className="min-w-0">

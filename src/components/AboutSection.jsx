@@ -1,4 +1,4 @@
-﻿import { motion as Motion } from 'framer-motion'
+import { Motion } from '../utils/motion'
 import Reveal from './Reveal'
 import SectionHeader from './SectionHeader'
 import TiltCard from './TiltCard'

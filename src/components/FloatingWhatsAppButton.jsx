@@ -1,5 +1,5 @@
-﻿import { motion as Motion } from 'framer-motion'
-import { BsWhatsapp } from 'react-icons/bs'
+import { Motion } from '../utils/motion'
+import { MessageCircle } from 'lucide-react'
 
 function FloatingWhatsAppButton({ whatsapp }) {
   if (!whatsapp?.number) {
@@ -22,7 +22,7 @@ function FloatingWhatsAppButton({ whatsapp }) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <BsWhatsapp className="h-5 w-5" />
+      <MessageCircle size={20} />
       <span className="hidden sm:inline">WhatsApp</span>
     </Motion.a>
   )

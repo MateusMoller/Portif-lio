@@ -1,4 +1,4 @@
-﻿import { motion as Motion } from 'framer-motion'
+import { Motion } from './utils/motion'
 import AboutSection from './components/AboutSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
@@ -41,7 +41,7 @@ function App() {
 
         <SkillsSection skills={portfolioData.skills} />
 
-        <ProjectsSection projects={portfolioData.projects} />
+        <ProjectsSection projects={portfolioData.projects} githubUrl={portfolioData.links.github} />
 
         <ProfileSection profile={portfolioData.professionalProfile} />
 

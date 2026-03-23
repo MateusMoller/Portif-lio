@@ -1,12 +1,17 @@
-﻿import { motion as Motion, useScroll, useSpring } from 'framer-motion'
+import { Motion, useReducedMotion, useScroll, useSpring } from '../utils/motion'
 
 function ScrollProgressBar() {
+  const shouldReduceMotion = useReducedMotion()
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 140,
     damping: 28,
     mass: 0.25,
   })
+
+  if (shouldReduceMotion) {
+    return null
+  }
 
   return (
     <Motion.div

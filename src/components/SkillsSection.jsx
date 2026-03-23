@@ -1,4 +1,4 @@
-﻿import { AnimatePresence, motion as Motion } from 'framer-motion'
+import { AnimatePresence, Motion } from '../utils/motion'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { getSkillIcon } from '../utils/skillIconMap'

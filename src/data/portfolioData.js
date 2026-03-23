@@ -222,18 +222,6 @@
         'Contato com software de desenho mecanico (Autodesk Inventor).',
       ],
     },
-    {
-      name: 'Contexto Industrial',
-      icon: 'industrial',
-      category: 'Dominio',
-      summary:
-        'Entendimento de rotina de producao, qualidade, prazos e padroes de eficiencia no ambiente fabril.',
-      details: [
-        'Familiaridade com rotina de producao e prazos.',
-        'Sensibilidade para seguranca, qualidade e padrao.',
-        'Solucoes pensadas para uso em ambiente fabril real.',
-      ],
-    },
   ],
   projects: [
     {

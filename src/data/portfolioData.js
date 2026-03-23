@@ -7,7 +7,7 @@
       'Desenvolvo solucoes que conectam TI, processos e engenharia para transformar rotinas operacionais em fluxos mais rapidos, padronizados e confiaveis.',
     location: 'Taquara, RS - Brasil',
     availability: 'Disponivel para networking, colaboracoes e oportunidades em processos, automacao e tecnologia aplicada.',
-    avatarUrl: 'https://avatars.githubusercontent.com/u/173965532?v=4',
+    avatarUrl: '/perfil-mateus-2026.jpg',
     resumeUrl: '/curriculo-mateus.pdf',
     email: 'mateushmoller@gmail.com',
     phone: '+55 51 99861-2360',
